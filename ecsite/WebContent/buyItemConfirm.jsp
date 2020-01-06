@@ -1,23 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="s" uri="/struts-tags" %>
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" type="text/css" href="./css/style.css">
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <title>BuyItemConfirm画面</title>
-	<script type="text/javascript">
-		function submitAction(url){
-			$('form').attr('action',url);
-			$('form').submit();
-		}
-	</script>
+<script type="text/javascript">
+	function submitAction(url){
+		$('form').attr('action',url);
+		$('form').submit();
+	}
+</script>
 </head>
 <body>
-	<div id="header">
-	</div>
+	<div id="header"></div>
 	<div id="main">
 		<div id="top">
 			<p>BuyItem</p>
@@ -45,27 +44,22 @@
 				</tr>
 
 				<tr>
-					<td>
-						<input type="button" value="戻る" onclick="submitAction('HomeAction')"/>
-					</td>
-					<td>
-						<input type="button" value="完了" onclick="submitAction('BuyItemConfirmAction')"/>
-					</td>
-					<!--
-					<td>
-						<p>戻る<a href='<s:url action="HomeAction" />'>こちら</a></p>
-						<p>完了<a href='<s:url action="BuyItemConfirmAction" />'>こちら</a></p>
-					</td>
-					-->
+					<td><input type="button" value="戻る"
+						onclick="submitAction('HomeAction')" /></td>
+					<td><input type="button" value="完了"
+						onclick="submitAction('BuyItemConfirmAction')" /></td>
 				</tr>
 			</s:form>
 		</div>
 		<div>
-			<p>前画面に戻る場合は<a href='<s:url action="GoHomeAction" />'>こちら</a></p>
-			<p>マイページ<a href='<s:url action="MyPageAction" />'>こちら</a></p>
+			<p>
+				前画面に戻る場合は<a href='<s:url action="GoHomeAction" />'>こちら</a>
+			</p>
+			<p>
+				マイページ<a href='<s:url action="MyPageAction" />'>こちら</a>
+			</p>
 		</div>
 	</div>
-	<div id="footer">
-	</div>
+	<div id="footer"></div>
 </body>
 </html>

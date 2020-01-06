@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="s" uri="/struts-tags" %>
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -9,8 +9,7 @@
 <title>MyPage画面</title>
 </head>
 <body>
-	<div id="header">
-	</div>
+	<div id="header"></div>
 	<div id="main">
 		<div id="top">
 			<p>Mypage</p>
@@ -45,15 +44,20 @@
 				</s:form>
 			</s:elseif>
 			<s:if test="message != nuLL">
-				<h3><s:property value="message"/></h3>
+				<h3>
+					<s:property value="message" />
+				</h3>
 			</s:if>
 			<div id="text-right">
-				<p>Homeへ戻る場合は<a href='<s:url action="GoHomeAction" />'>こちら</a></p>
-				<p>ログアウトする場合は<a href='<s:url action="LogoutAction" />'>こちら</a></p>
+				<p>
+					Homeへ戻る場合は<a href='<s:url action="GoHomeAction" />'>こちら</a>
+				</p>
+				<p>
+					ログアウトする場合は<a href='<s:url action="LogoutAction" />'>こちら</a>
+				</p>
 			</div>
 		</div>
 	</div>
-	<div id="footer">
-	</div>
+	<div id="footer"></div>
 </body>
 </html>
