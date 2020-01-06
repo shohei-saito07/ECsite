@@ -10,7 +10,7 @@ import com.internousdev.ecsite.dao.MyPageDAO;
 import com.internousdev.ecsite.dto.MyPageDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
-public class MyPageAction extends ActionSupport implements SessionAware{
+public class MyPageAction extends ActionSupport implements SessionAware {
 
 	private Map<String, Object> session;
 	private MyPageDAO myPageDAO = new MyPageDAO();
@@ -18,16 +18,17 @@ public class MyPageAction extends ActionSupport implements SessionAware{
 	private String deleteFlg;
 	private String message;
 
-	public String execute() throws SQLException{
-		if(!session.containsKey("login_user_id")){
+	public String execute() throws SQLException {
+
+		if (!session.containsKey("login_user_id")) {
 			return ERROR;
 		}
 
-		if(deleteFlg == null){
+		if (deleteFlg == null) {
 			String item_transaction_id = session.get("id").toString();
 			String user_master_id = session.get("login_user_id").toString();
 			myPageList = myPageDAO.getMyPageUserInfo(item_transaction_id, user_master_id);
-		}else if(deleteFlg.equals("1")){
+		} else if (deleteFlg.equals("1")) {
 			delete();
 		}
 
@@ -35,38 +36,38 @@ public class MyPageAction extends ActionSupport implements SessionAware{
 		return result;
 	}
 
-	public void delete() throws SQLException{
+	public void delete() throws SQLException {
 
 		String item_transaction_id = session.get("id").toString();
 		String user_master_id = session.get("login_user_id").toString();
 
-		int res = myPageDAO.buyItemHistoryDelete(item_transaction_id,user_master_id);
+		int res = myPageDAO.buyItemHistoryDelete(item_transaction_id, user_master_id);
 
-		if(res > 0){
+		if (res > 0) {
 			myPageList = null;
 			setMessage("商品上を正しく削除しました。");
-		}else if(res == 0){
+		} else if (res == 0) {
 			setMessage("商品情報の削除に失敗しました。");
 		}
 	}
 
-	public void setDeleteFlg(String deleteFlg){
+	public void setDeleteFlg(String deleteFlg) {
 		this.deleteFlg = deleteFlg;
 	}
 
-	public ArrayList<MyPageDTO> getMyPageList(){
+	public ArrayList<MyPageDTO> getMyPageList() {
 		return this.myPageList;
 	}
 
-	public String getMessage(){
+	public String getMessage() {
 		return this.message;
 	}
 
-	public void setMessage(String message){
+	public void setMessage(String message) {
 		this.message = message;
 	}
 
-	public Map<String, Object> getSession(){
+	public Map<String, Object> getSession() {
 		return this.session;
 	}
 
@@ -74,4 +75,5 @@ public class MyPageAction extends ActionSupport implements SessionAware{
 	public void setSession(Map<String, Object> session) {
 		this.session = session;
 	}
+
 }
